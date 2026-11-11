@@ -534,3 +534,27 @@ try:
         print(f.read())
 except FileNotFoundError:
     print("Error: file tidak ditemukan")
+
+
+
+
+
+# Bab 18: Module
+# Mengimpor module bawaan Python
+import math
+import random
+from datetime import date
+
+print("Akar 16:", math.sqrt(16))
+print("Pembulatan ke atas:", math.ceil(4.2))
+print("Angka acak 1-10:", random.randint(1, 10))
+print("Tahun ini:", date.today().year)
+
+# Mengimpor module buatan sendiri
+import alat_hitung
+print("Tambah:", alat_hitung.tambah(5, 3))
+print("Kali:", alat_hitung.kali(4, 6))
+
+# Mengimpor sebagian isi module dan memberi alias
+from alat_hitung import luas_lingkaran as luas
+print("Luas lingkaran:", luas(7))
