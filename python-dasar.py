@@ -271,3 +271,46 @@ siswa1.info_kampus()
 # Mengubah atribut object
 siswa1.jurusan = "DKV"
 siswa1.perkenalan()
+
+
+
+
+
+# Bab 12: Encapsulation
+# Encapsulation menyembunyikan data agar tidak diubah sembarangan
+class RekeningBank:
+    def __init__(self, pemilik, saldo):
+        self.pemilik = pemilik        # public
+        self._cabang = "Subang"       # protected (konvensi: satu underscore)
+        self.__saldo = saldo          # private (dua underscore)
+
+    # Getter: membaca data private
+    def get_saldo(self):
+        return self.__saldo
+
+    # Setter: mengubah data private dengan validasi
+    def setor(self, jumlah):
+        if jumlah > 0:
+            self.__saldo += jumlah
+            print(f"Setor {jumlah} berhasil")
+        else:
+            print("Jumlah setor tidak valid")
+
+    def tarik(self, jumlah):
+        if 0 < jumlah <= self.__saldo:
+            self.__saldo -= jumlah
+            print(f"Tarik {jumlah} berhasil")
+        else:
+            print("Saldo tidak cukup")
+
+akun = RekeningBank("Budi", 100000)
+print(akun.pemilik)
+print("Saldo:", akun.get_saldo())
+
+akun.setor(50000)
+akun.tarik(30000)
+akun.tarik(999999)
+print("Saldo akhir:", akun.get_saldo())
+
+# Akses langsung ke atribut private akan error
+# print(akun.__saldo)
