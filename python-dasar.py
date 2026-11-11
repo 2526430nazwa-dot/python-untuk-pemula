@@ -501,3 +501,36 @@ finally:
     print("Blok finally selalu dijalankan")
 
 # Membuat error sendiri
+
+
+
+
+
+
+
+# Bab 17: File Handling
+# Menulis file (mode "w": buat baru atau timpa isi lama)
+with open("catatan.txt", "w") as f:
+    f.write("Baris pertama\n")
+    f.write("Baris kedua\n")
+
+# Menambah isi file (mode "a": append)
+with open("catatan.txt", "a") as f:
+    f.write("Baris ketiga\n")
+
+# Membaca seluruh isi file (mode "r")
+with open("catatan.txt", "r") as f:
+    isi = f.read()
+    print(isi)
+
+# Membaca per baris
+with open("catatan.txt", "r") as f:
+    for baris in f:
+        print("Baris:", baris.strip())
+
+# Menangani file yang tidak ada
+try:
+    with open("tidak_ada.txt", "r") as f:
+        print(f.read())
+except FileNotFoundError:
+    print("Error: file tidak ditemukan")
