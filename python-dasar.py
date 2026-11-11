@@ -356,3 +356,54 @@ anjing.suara()
 # Mengecek hubungan class
 print(isinstance(kucing, Hewan))
 print(issubclass(Anjing, Hewan))
+
+
+
+
+# Bab 14: Polymorphism
+# Polymorphism: method dengan nama sama, tetapi perilakunya berbeda
+class Burung:
+    def bergerak(self):
+        print("Burung terbang")
+
+class Ikan:
+    def bergerak(self):
+        print("Ikan berenang")
+
+class Kuda:
+    def bergerak(self):
+        print("Kuda berlari")
+
+# Satu function dipakai untuk berbagai object
+def gerakkan(hewan):
+    hewan.bergerak()
+
+for h in [Burung(), Ikan(), Kuda()]:
+    gerakkan(h)
+
+# Polymorphism lewat inheritance (method overriding)
+class Bentuk:
+    def luas(self):
+        return 0
+
+class Persegi(Bentuk):
+    def __init__(self, sisi):
+        self.sisi = sisi
+
+    def luas(self):
+        return self.sisi ** 2
+
+class Lingkaran(Bentuk):
+    def __init__(self, jari_jari):
+        self.jari_jari = jari_jari
+
+    def luas(self):
+        return 3.14 * self.jari_jari ** 2
+
+daftar_bentuk = [Persegi(4), Lingkaran(7)]
+for bentuk in daftar_bentuk:
+    print(type(bentuk).__name__, "luas:", bentuk.luas())
+
+# Polymorphism pada function bawaan
+print(len("Python"))
+print(len([1, 2, 3, 4]))
