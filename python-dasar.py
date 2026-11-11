@@ -59,3 +59,36 @@ print(NAMA_SEKOLAH)
 jari_jari = 7
 luas_lingkaran = PI * jari_jari ** 2
 print("Luas lingkaran:", luas_lingkaran)
+
+
+
+
+# Bab 6: Operator
+a = 10
+b = 3
+
+# Operator aritmatika
+print("Tambah:", a + b)
+print("Kurang:", a - b)
+print("Kali:", a * b)
+print("Bagi:", a / b)
+print("Bagi bulat:", a // b)
+print("Sisa bagi:", a % b)
+print("Pangkat:", a ** b)
+
+# Operator perbandingan
+print(a == b)
+print(a != b)
+print(a > b)
+print(a <= b)
+
+# Operator logika
+print(a > 5 and b < 5)
+print(a > 5 or b > 5)
+print(not (a > b))
+
+# Operator assignment
+c = 5
+c += 2
+c *= 3
+print("Nilai c:", c)
