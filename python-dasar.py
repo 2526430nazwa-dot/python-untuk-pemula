@@ -235,3 +235,39 @@ for key, value in siswa.items():
 
 # Mengecek key
 print("nama" in siswa)
+
+
+
+
+
+# Bab 11: Class & Object
+# Class adalah cetakan, object adalah hasil cetakannya
+class Mahasiswa:
+    # Atribut class (dimiliki semua object)
+    kampus = "SMKN 2 Subang"
+
+    # Constructor: dijalankan saat object dibuat
+    def __init__(self, nama, jurusan):
+        self.nama = nama          # atribut object
+        self.jurusan = jurusan
+
+    # Method: function di dalam class
+    def perkenalan(self):
+        print(f"Halo, saya {self.nama} dari jurusan {self.jurusan}")
+
+    def info_kampus(self):
+        print("Sekolah:", self.kampus)
+
+# Membuat object dari class
+siswa1 = Mahasiswa("Budi", "RPL")
+siswa2 = Mahasiswa("Ani", "TKJ")
+
+# Mengakses atribut dan method
+print(siswa1.nama)
+siswa1.perkenalan()
+siswa2.perkenalan()
+siswa1.info_kampus()
+
+# Mengubah atribut object
+siswa1.jurusan = "DKV"
+siswa1.perkenalan()
