@@ -40,3 +40,22 @@ print(x, y, z, a, b, c)
 # Aturan penamaan: huruf, angka, underscore; tidak boleh diawali angka
 nama_lengkap = "Budi Santoso"
 print(nama_lengkap)
+
+
+
+
+# Bab 5: Konstanta
+# Python tidak punya konstanta sungguhan.
+# Konvensinya: nama ditulis HURUF BESAR agar tidak diubah.
+PI = 3.14159
+GRAVITASI = 9.8
+NAMA_SEKOLAH = "SMKN 2 Subang"
+
+print(PI)
+print(GRAVITASI)
+print(NAMA_SEKOLAH)
+
+# Contoh pemakaian
+jari_jari = 7
+luas_lingkaran = PI * jari_jari ** 2
+print("Luas lingkaran:", luas_lingkaran)
