@@ -125,3 +125,41 @@ for i in range(1, 10):
     if i == 6:
         break
     print("Angka:", i)
+
+
+
+
+
+# Bab 8: Function
+# Function tanpa parameter
+def sapa():
+    print("Halo, selamat belajar Python!")
+
+sapa()
+
+# Function dengan parameter
+def sapa_nama(nama):
+    print("Halo,", nama)
+
+sapa_nama("Budi")
+
+# Function dengan return
+def tambah(a, b):
+    return a + b
+
+hasil = tambah(5, 3)
+print("Hasil tambah:", hasil)
+
+# Parameter default
+def perkenalan(nama, kota="Subang"):
+    print(f"Nama saya {nama}, dari {kota}")
+
+perkenalan("Budi")
+perkenalan("Ani", "Bandung")
+
+# Function dengan banyak return value
+def hitung(a, b):
+    return a + b, a * b
+
+jumlah, kali = hitung(4, 5)
+print(jumlah, kali)
