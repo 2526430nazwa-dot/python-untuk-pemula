@@ -163,3 +163,38 @@ def hitung(a, b):
 
 jumlah, kali = hitung(4, 5)
 print(jumlah, kali)
+
+
+
+
+
+
+
+# Bab 9: List, Tuple, dan Set
+# List: berurutan, bisa diubah
+buah = ["apel", "jeruk", "mangga"]
+print(buah)
+print(buah[0])
+buah.append("pisang")
+buah.remove("jeruk")
+buah[0] = "anggur"
+print(buah)
+print("Jumlah:", len(buah))
+
+# Tuple: berurutan, TIDAK bisa diubah
+koordinat = (10, 20)
+print(koordinat)
+print(koordinat[0])
+
+# Set: tidak berurutan, tidak ada duplikat
+angka = {1, 2, 3, 3, 2}
+print(angka)
+angka.add(4)
+print(angka)
+
+# Operasi set
+a = {1, 2, 3}
+b = {3, 4, 5}
+print("Gabungan:", a | b)
+print("Irisan:", a & b)
+print("Selisih:", a - b)
