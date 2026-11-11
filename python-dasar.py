@@ -460,3 +460,44 @@ try:
     k = Kendaraan("Umum")
 except TypeError as e:
     print("Error:", e)
+
+
+
+
+
+
+# Bab 16: Exception Handling
+# Exception handling menangani error agar program tidak berhenti mendadak
+
+# try dan except
+try:
+    hasil = 10 / 0
+except ZeroDivisionError:
+    print("Error: tidak bisa membagi dengan nol")
+
+# Menangkap beberapa jenis error
+try:
+    angka = int("abc")
+except ValueError:
+    print("Error: input bukan angka")
+except TypeError:
+    print("Error: tipe data salah")
+
+# Menampilkan pesan error asli
+try:
+    daftar = [1, 2, 3]
+    print(daftar[5])
+except IndexError as e:
+    print("Error:", e)
+
+# else dan finally
+try:
+    angka = int("42")
+except ValueError:
+    print("Gagal konversi")
+else:
+    print("Berhasil, nilainya:", angka)
+finally:
+    print("Blok finally selalu dijalankan")
+
+# Membuat error sendiri
