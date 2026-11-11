@@ -558,3 +558,19 @@ print("Kali:", alat_hitung.kali(4, 6))
 # Mengimpor sebagian isi module dan memberi alias
 from alat_hitung import luas_lingkaran as luas
 print("Luas lingkaran:", luas(7))
+
+
+
+
+# Bab 19: Package
+# Package: folder berisi kumpulan module dan file __init__.py
+from alat import matematika, teks
+
+print("Tambah:", matematika.tambah(10, 5))
+print("Pangkat:", matematika.pangkat(2, 8))
+print("Huruf besar:", teks.huruf_besar("python"))
+print("Dibalik:", teks.balik("python"))
+
+# Mengimpor function langsung dari package
+from alat.matematika import tambah as jumlah
+print("Jumlah:", jumlah(7, 3))
