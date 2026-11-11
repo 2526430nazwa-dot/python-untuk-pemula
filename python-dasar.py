@@ -407,3 +407,56 @@ for bentuk in daftar_bentuk:
 # Polymorphism pada function bawaan
 print(len("Python"))
 print(len([1, 2, 3, 4]))
+
+
+
+
+# Bab 15: Abstraction
+# Abstraction: menyembunyikan detail, hanya menampilkan hal yang penting
+from abc import ABC, abstractmethod
+
+# Abstract class: tidak bisa dibuat object langsung
+class Kendaraan(ABC):
+    def __init__(self, nama):
+        self.nama = nama
+
+    @abstractmethod
+    def jalan(self):
+        pass
+
+    @abstractmethod
+    def suara(self):
+        pass
+
+    # Method biasa tetap boleh ada di abstract class
+    def info(self):
+        print(f"Kendaraan: {self.nama}")
+
+# Class turunan wajib mengimplementasikan semua abstract method
+class Motor(Kendaraan):
+    def jalan(self):
+        print(f"{self.nama} melaju dengan 2 roda")
+
+    def suara(self):
+        print("Brum brum")
+
+class Mobil(Kendaraan):
+    def jalan(self):
+        print(f"{self.nama} melaju dengan 4 roda")
+
+    def suara(self):
+        print("Tin tin")
+
+motor = Motor("Vario")
+mobil = Mobil("Avanza")
+
+for k in [motor, mobil]:
+    k.info()
+    k.jalan()
+    k.suara()
+
+# Membuat object dari abstract class akan error
+try:
+    k = Kendaraan("Umum")
+except TypeError as e:
+    print("Error:", e)
