@@ -314,3 +314,45 @@ print("Saldo akhir:", akun.get_saldo())
 
 # Akses langsung ke atribut private akan error
 # print(akun.__saldo)
+
+
+
+
+
+
+# Bab 13: Inheritance
+# Inheritance: class anak mewarisi atribut dan method dari class induk
+class Hewan:
+    def __init__(self, nama):
+        self.nama = nama
+
+    def makan(self):
+        print(f"{self.nama} sedang makan")
+
+    def suara(self):
+        print("Hewan mengeluarkan suara")
+
+# Class anak mewarisi class Hewan
+class Kucing(Hewan):
+    def suara(self):                  # method overriding
+        print(f"{self.nama}: Meong")
+
+class Anjing(Hewan):
+    def __init__(self, nama, ras):
+        super().__init__(nama)        # memanggil constructor induk
+        self.ras = ras
+
+    def suara(self):
+        print(f"{self.nama} ({self.ras}): Guk guk")
+
+kucing = Kucing("Tom")
+anjing = Anjing("Rex", "Husky")
+
+kucing.makan()        # method warisan
+kucing.suara()        # method yang di-override
+anjing.makan()
+anjing.suara()
+
+# Mengecek hubungan class
+print(isinstance(kucing, Hewan))
+print(issubclass(Anjing, Hewan))
