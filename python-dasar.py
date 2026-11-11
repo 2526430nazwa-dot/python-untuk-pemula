@@ -92,3 +92,36 @@ c = 5
 c += 2
 c *= 3
 print("Nilai c:", c)
+
+
+
+
+
+# Bab 7: Control Flow
+nilai = 80
+
+# Percabangan if, elif, else
+if nilai >= 90:
+    print("Grade A")
+elif nilai >= 75:
+    print("Grade B")
+else:
+    print("Grade C")
+
+# Perulangan for
+for i in range(1, 6):
+    print("Perulangan ke-", i)
+
+# Perulangan while
+n = 1
+while n <= 3:
+    print("While:", n)
+    n += 1
+
+# break dan continue
+for i in range(1, 10):
+    if i == 3:
+        continue
+    if i == 6:
+        break
+    print("Angka:", i)
