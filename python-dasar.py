@@ -198,3 +198,40 @@ b = {3, 4, 5}
 print("Gabungan:", a | b)
 print("Irisan:", a & b)
 print("Selisih:", a - b)
+
+
+
+
+# Bab 10: Dictionary
+# Dictionary menyimpan data dalam pasangan key: value
+siswa = {
+    "nama": "Budi",
+    "umur": 17,
+    "jurusan": "RPL"
+}
+print(siswa)
+
+# Mengakses nilai
+print(siswa["nama"])
+print(siswa.get("umur"))
+
+# Menambah dan mengubah data
+siswa["kelas"] = "XI"
+siswa["umur"] = 18
+print(siswa)
+
+# Menghapus data
+del siswa["kelas"]
+print(siswa)
+
+# Mengambil keys, values, dan items
+print(siswa.keys())
+print(siswa.values())
+print(siswa.items())
+
+# Perulangan pada dictionary
+for key, value in siswa.items():
+    print(key, "=", value)
+
+# Mengecek key
+print("nama" in siswa)
